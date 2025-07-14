@@ -20,9 +20,9 @@ def load_allocine_dataframe_from_csv(data_dir="data"):
     """
     Charge les fichiers .csv d'Allociné en DataFrame pandas.
     """
-    train_path = os.path.join(data_dir, "train.csv")
-    val_path = os.path.join(data_dir, "val.csv")
-    test_path = os.path.join(data_dir, "test.csv")
+    train_path = os.path.join(data_dir, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/train.csv")
+    val_path = os.path.join(data_dir, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/val.csv")
+    test_path = os.path.join(data_dir, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/test.csv")
 
     train_df = pd.read_csv(train_path)
     val_df = pd.read_csv(val_path)

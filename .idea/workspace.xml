@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="okay !">
-      <change afterPath="$PROJECT_DIR$/SentioAI/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SentioAI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/__init__.py" afterDir="false" />
+    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="essai">
       <change beforePath="$PROJECT_DIR$/SentioAI/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752522159016</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="essai">
+      <option name="closed" value="true" />
+      <created>1752523676385</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752523676385</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +142,7 @@
     <MESSAGE value="enleve main" />
     <MESSAGE value="requirements.txt now available" />
     <MESSAGE value="okay !" />
-    <option name="LAST_COMMIT_MESSAGE" value="okay !" />
+    <MESSAGE value="essai" />
+    <option name="LAST_COMMIT_MESSAGE" value="essai" />
   </component>
 </project>

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="data added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SentioAI/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/data_loader.py" afterDir="false" />
-    </list>
+    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="data load and dataframe added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752524453228</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="data load and dataframe added">
+      <option name="closed" value="true" />
+      <created>1752525274638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752525274638</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +168,7 @@
     <MESSAGE value="essai" />
     <MESSAGE value="data_loader.py mieux" />
     <MESSAGE value="data added" />
-    <option name="LAST_COMMIT_MESSAGE" value="data added" />
+    <MESSAGE value="data load and dataframe added" />
+    <option name="LAST_COMMIT_MESSAGE" value="data load and dataframe added" />
   </component>
 </project>

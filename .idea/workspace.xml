@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="enleve main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="enleve main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +79,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752521318770</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="__init__.py is available !">
+      <option name="closed" value="true" />
+      <created>1752521825418</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752521825418</updated>
+    </task>
+    <task id="LOCAL-00004" summary="enleve main">
+      <option name="closed" value="true" />
+      <created>1752521839183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752521839183</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +111,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="debut" />
+    <MESSAGE value="__init__.py is available !" />
     <MESSAGE value="enleve main" />
     <option name="LAST_COMMIT_MESSAGE" value="enleve main" />
   </component>

@@ -1,0 +1,26 @@
+# Traitement du langage naturel
+nltk==3.8.1
+spacy==3.7.2
+
+# Manipulation de données
+pandas==2.2.2
+numpy==1.26.4
+
+# Machine Learning
+scikit-learn==1.5.0
+
+# Deep Learning
+tensorflow==2.16.1
+
+# Interface utilisateur
+streamlit==1.35.0
+
+# Sérialisation des modèles
+joblib==1.4.2
+
+# Visualisation (optionnelle)
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Téléchargement de données (optionnel)
+requests==2.31.0

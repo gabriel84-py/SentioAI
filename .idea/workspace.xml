@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SentioAI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/deep_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/ml_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/streamlit_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SentioAI/vectorizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="debut" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "gabriel84-py"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/gabriel84-py/SentioAI.git",
+    "accountId": "432b9d24-ef1d-4b88-9e67-1b3ce4fc5208"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -67,6 +63,30 @@
       <option name="presentableId" value="Default" />
       <updated>1752517098180</updated>
     </task>
+    <task id="LOCAL-00001" summary="debut">
+      <option name="closed" value="true" />
+      <created>1752520925929</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752520925929</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="debut" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut" />
   </component>
 </project>

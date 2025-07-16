@@ -211,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752690051114</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="preprocessing with the stop_words removing">
+      <option name="closed" value="true" />
+      <created>1752690644062</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752690644062</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

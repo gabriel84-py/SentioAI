@@ -1,7 +1,7 @@
 import unicodedata
 
 
-def lettre_in_liste(liste):
+def lettre_in_liste(liste: list):
     for i in liste:
         if i.isalpha():
             return True
@@ -29,6 +29,30 @@ def enlever_accent(texte):
         if unicodedata.category(i) == "Mn":
             texte = texte.replace(i, "")
     return texte
+
+def stop_words(texte: list):
+    final_list = []
+    stop_words_inutiles = [
+        "alors", "au", "aux", "avec", "ce", "cet", "cette", "ces", "ceux", "ci", "cela",
+        "dans", "de", "des", "du", "en", "et", "eux", "il", "elle", "ils", "elles",
+        "je", "tu", "il", "elle", "nous", "vous", "ils", "elles", "le", "la", "les", "lui", "leur",
+        "ma", "mes", "mon", "notre", "nos", "ta", "tes", "ton", "votre", "vos",
+        "moi", "toi", "te", "se", "s", "t", "y", "c", "d", "l", "m", "n",
+        "qu", "que", "qui", "quoi", "où", "on", "un", "une",
+        "es", "est", "était", "étaient", "étant", "étions", "êtes", "sont",
+        "ai", "as", "avons", "avez", "ont", "avais", "avait", "avions", "aviez", "avaient",
+        "eu", "eue", "eues", "eus", "ayant",
+        "ici", "là", "quel", "quelle", "quels", "quelles",
+        "aucunement", "parfois", "souvent", "toujours", "rarement",
+        "lorsque", "lorsqu", "depuis", "puisque", "tandis", "ainsi", "entre",
+        "ceci", "cela", "ça", "comme", "autre", "autres", "chacun", "tous", "tout", "toute", "toutes"
+    ]
+
+    for i in texte:
+        if i not in stop_words_inutiles:
+            i.append(final_list)
+
+    return final_list
 
 def preprocess(texte):
     caractères_a_netoyer = list(".,?!;:\"'()[]{}@#$%^&*-_=+~/\\|<>")
@@ -71,4 +95,6 @@ def preprocess(texte):
         i = "".join(i)
         new_space.append(i)
 
-    return new_space
+    final_list = stop_words(new_space)
+
+    return final_list

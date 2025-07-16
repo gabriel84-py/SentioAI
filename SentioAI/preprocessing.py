@@ -1,3 +1,8 @@
+import unicodedata
+
+from tensorflow.python.ops.gen_io_ops import text_line_reader_eager_fallback
+
+
 def lettre_in_liste(liste):
     for i in liste:
         if i.isalpha():
@@ -8,9 +13,8 @@ def tokeniser(texte):
     mot_en_court = []
     liste_de_mot = []
     for i in texte:
-        if i != " ":
+        if i != " " or i != "," or i != ";":
             mot_en_court.append(i)
-            print("".join(mot_en_court))
         if i == " ":
             if len(mot_en_court) > 0:
                 liste_de_mot.append("".join(mot_en_court))
@@ -21,7 +25,14 @@ def tokeniser(texte):
 
     return liste_de_mot
 
-def nettoyer(texte):
+def enlever_accent(texte):
+    texte = unicodedata.normalize('NFD', texte)
+    for i in texte:
+        if unicodedata.category(i) == "Mn":
+            texte = texte.replace(i, "")
+    return texte
+
+def preprocess(texte):
     caractères_a_netoyer = list(".,?!;:\"'()[]{}@#$%^&*-_=+~/\\|<>")
 
     """
@@ -36,17 +47,30 @@ def nettoyer(texte):
 
     texte_lowercase = texte.lower()
     texte_lowercase = list(texte_lowercase)
-
     bon = []
     for i in texte_lowercase:
         if i not in caractères_a_netoyer:
             bon.append(i)
-
+        else:
+            bon.append(" ")
     textsans_characters = "".join(bon)
+    text_sans_accent = enlever_accent(textsans_characters)
+    tokenise = tokeniser(text_sans_accent)
+    for i in tokenise:
+        if i == " ":
+            tokenise.remove(i)
+            if i == " ":
+                tokenise.remove(i)
+                if i == " ":
+                    tokenise.remove(i)
 
-    tokenise = tokeniser(textsans_characters)
+    new_space = []
+    for i in tokenise:
+        i = list(i)
+        for j in range(len(i)):
+            if i[j] == ' ':
+                del i[j]
+        i = "".join(i)
+        new_space.append(i)
 
-    return tokenise
-
-
-print(nettoyer('ceci est un test'))
+    return new_space

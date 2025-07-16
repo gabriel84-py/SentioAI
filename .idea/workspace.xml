@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="meilleur">
+    <list default="true" id="af449f71-e9e7-4ea5-8a38-e419730ac1d0" name="Changes" comment="preprocessing is now available">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SentioAI/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SentioAI/brouillon.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/brouillon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SentioAI/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/SentioAI/preprocessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +49,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.app.executor": "Run",
+    "Python.brouillon.executor": "Run",
     "Python.data_loader.executor": "Run",
     "Python.preprocessing.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -173,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752526301715</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="preprocessing is now available">
+      <option name="closed" value="true" />
+      <created>1752602793519</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752602793519</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +210,7 @@
     <MESSAGE value="data load and dataframe added" />
     <MESSAGE value="version added" />
     <MESSAGE value="meilleur" />
-    <option name="LAST_COMMIT_MESSAGE" value="meilleur" />
+    <MESSAGE value="preprocessing is now available" />
+    <option name="LAST_COMMIT_MESSAGE" value="preprocessing is now available" />
   </component>
 </project>

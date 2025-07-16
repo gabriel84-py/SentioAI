@@ -11,7 +11,7 @@ def tokeniser(texte):
     mot_en_court = []
     liste_de_mot = []
     for i in texte:
-        if i != " " or i != "," or i != ";":
+        if i not in [" ", ",", ";"]:
             mot_en_court.append(i)
         if i == " ":
             if len(mot_en_court) > 0:
@@ -50,7 +50,7 @@ def stop_words(texte: list):
 
     for i in texte:
         if i not in stop_words_inutiles:
-            i.append(final_list)
+            final_list.append(i)
 
     return final_list
 

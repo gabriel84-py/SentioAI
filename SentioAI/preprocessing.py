@@ -1,7 +1,5 @@
 import unicodedata
 
-from tensorflow.python.ops.gen_io_ops import text_line_reader_eager_fallback
-
 
 def lettre_in_liste(liste):
     for i in liste:

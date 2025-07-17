@@ -1,25 +1,26 @@
-from SentioAI.data_loader import load_allocine_dataframe_from_csv
-from SentioAI.preprocessing import preprocess
-from SentioAI.vectorizer import vectorize, creer_vocab
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-import pandas as pd
-import json
+from flask import Flask, render_template, request
 import joblib
+from preprocessing import preprocess  # Ton propre module de prétraitement
+from collections import Counter
 
+# Initialisation de l'application Flask
+app = Flask(__name__)
+
+# Chargement du modèle et du vectorizer
 model = joblib.load("model_sentioAI.pkl")
 vectorizer = joblib.load("vectorizer_sentioAI.pkl")
 
-# Exemple
-nouvelle_phrase = input("Donne ta phrase : ")
+@app.route("/", methods=["GET", "POST"])
+def index():
+    prediction = None
+    if request.method == "POST":
+        texte = request.form["texte_utilisateur"]
+        tokens = preprocess(texte)
+        tokens_count = Counter(tokens)
+        vecteur = vectorizer.transform([tokens_count])
+        prediction = model.predict(vecteur)[0]
+        print("PRÉDICTION :", prediction)
+    return render_template("index.html", prediction=prediction)
 
-# Prétraitement (le même que tu as appliqué à ton corpus)
-from SentioAI.preprocessing import preprocess
-
-tokens = preprocess(nouvelle_phrase)
-tfidf_dict = {mot: tokens.count(mot) / len(tokens) for mot in set(tokens)}
-tfidf_vect = vectorizer.transform([tfidf_dict])
-prediction = model.predict(tfidf_vect)
-
-print("Classe prédite :", prediction[0])
+if __name__ == "__main__":
+    app.run(debug=False, host='0.0.0.0', port='5000')

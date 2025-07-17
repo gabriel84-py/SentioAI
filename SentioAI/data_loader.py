@@ -7,7 +7,7 @@ def load_my_dataset():
     """"
     Télécharge les donnés et les convertis et les enregistres en CSV si ce n'est pas déja fait
     """
-    if not bool(os.listdir("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data")):
+    if not bool(os.listdir("//data")):
         print('Téléchargement en court...')
         dataset = load_dataset("tblard/allocine")
         print('Création des CSV')

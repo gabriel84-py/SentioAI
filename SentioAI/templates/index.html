@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SentioAI - Analyse d'humeur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 SentioAI</h1>
+        <p>Crée par Gabriel Jean Vermeille</p>
+        <p>Entrez un texte pour analyser son sentiment :</p>
+        <form method="POST">
+            <textarea name="texte_utilisateur" placeholder="Votre texte ici..." required></textarea>
+            <button type="submit">Analyser</button>
+        </form>
+
+        {% if prediction is not none %}
+            <p><strong>Prédiction :</strong>
+            {% if prediction == 1 %}
+                👍 Positive
+            {% else %}
+                👎 Negative
+        {% endif %}
+  </p>
+{% endif %}
+
+    </div>
+</body>
+</html>

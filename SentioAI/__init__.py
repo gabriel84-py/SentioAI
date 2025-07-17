@@ -9,5 +9,4 @@ from .data_loader import load_my_dataset, load_allocine_dataframe_from_csv
 #from .ml_model import SentimentClassifier
 #from .deep_model import SentioLSTM
 
-# Optionnel : message de confirmation
-print("📦 SentioAI package loaded.")
+

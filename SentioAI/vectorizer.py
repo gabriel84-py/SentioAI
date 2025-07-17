@@ -18,7 +18,7 @@ def creer_vocab(docs):
             if j not in vocab_final:
                 vocab_final.append(j)
 
-    return vocab_final
+    return sorted(vocab_final)
 
 def TF(docs):
 
@@ -81,10 +81,12 @@ def IDF(docs, vocab):
     IDF_dic = {}
     for  doc in docs:
         for mot in doc:
-            IDF_dic[mot] = math.log(N / DF_dico[mot])
+            if DF_dico[mot] > 0:
+                IDF_dic[mot] = math.log(N / DF_dico[mot])
+
     return IDF_dic
 
-def Tf_Idf(docs: list, vocab):
+def vectorize(docs: list, vocab):
     TF_dico = TF(docs)
     IDF_dico = IDF(docs, vocab)
     TF_IDF_list: list = []
@@ -95,10 +97,3 @@ def Tf_Idf(docs: list, vocab):
             TF_IDF_doc[mot] = TF_doc[mot] * IDF_dico[mot]
         TF_IDF_list.append(TF_IDF_doc)
     return TF_IDF_list
-
-docs = [
-    ["le", "chat", "mange", "la", "souris", "souris"],
-    ["le", "chien", "aboie"],
-    ["la", "souris", "mange", "le", "fromage"]
-]
-print(Tf_Idf(docs))

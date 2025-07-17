@@ -1,99 +1,88 @@
 import math
+from collections import Counter
 
-def creer_vocab(docs):
+def creer_vocab(docs, min_df=5, max_df_ratio=0.9):
     """
-    Construit un vocabulaire unique à partir d'une liste de documents tokenisés.
-
-    Args:
-        docs (list of list of str): Corpus sous forme d'une liste de documents,
-                                    chaque document étant une liste de mots (tokens).
-
-    Returns:
-        list of str: Liste des mots uniques présents dans le corpus.
+        Construit un vocabulaire limité basé sur les fréquences documentaires.
         """
+    N = len(docs)
+    df_counter = Counter()
 
-    vocab_final = []
-    for i in docs:
-        for j in i:
-            if j not in vocab_final:
-                vocab_final.append(j)
+    for doc in docs:
+        unique_mots = set(doc)
+        for mot in unique_mots:
+            df_counter[mot] += 1
 
-    return sorted(vocab_final)
+    vocab = [
+        mot for mot, df in df_counter.items()
+        if df >= min_df and df <= max_df_ratio * N
+    ]
+
+    return sorted(vocab)
 
 def TF(docs):
-
     """
-    Calcule TF.
-
-    Args:
-        docs (list of list of str): Corpus sous forme d'une liste de documents,
-                                    chaque document étant une liste de mots (tokens).
-
-    Returns:
-        Dictionary.
-        """
-
+       Calcule la fréquence des mots (TF) pour chaque document.
+    """
+    print("TF commence")
     TF_list = []
-
-    for doc in docs:  # chaque doc est une liste de mots
-        count = {}
-        TF = {}
+    for doc in docs:
+        count = Counter(doc)
         length = len(doc)
-
-        # Compter les occurrences
-        for mot in doc:
-            if mot in count:
-                count[mot] += 1
-            else:
-                count[mot] = 1
-
-        # Calcul du TF
-        for mot in count:
-            TF[mot] = count[mot] / length
-
-        TF_list.append(TF)  # ajoute le dictionnaire TF de ce document à la liste
-
+        tf_doc = {mot: count[mot] / length for mot in count}
+        TF_list.append(tf_doc)
+    print("TF finit")
     return TF_list
 
 def DF(docs, vocab):
-
     """
-    Calcule TF.
-
-    Args:
-        docs (list of list of str): Corpus sous forme d'une liste de documents,
-                                    chaque document étant une liste de mots (tokens).
-
-    Returns:
-        Integer.
-        """
+        Calcule le Document Frequency (DF) pour chaque mot du vocabulaire.
+    """
+    print("DF commence")
     DF = {mot: 0 for mot in vocab}
-    for i in vocab:
-        for h in docs:
-            if i in h:
-                DF[i] += 1
-
+    for doc in docs:
+        unique_mots = set(doc)
+        for mot in unique_mots:
+            if mot in DF:
+                DF[mot] += 1
+    print("DF finit")
     return DF
 
 def IDF(docs, vocab):
-    DF_dico = DF(docs, vocab)
+    """
+        Calcule l'Inverse Document Frequency (IDF) pour chaque mot.
+    """
+    print("IDF commence")
     N = len(docs)
+    DF_dico = DF(docs, vocab)
     IDF_dic = {}
-    for  doc in docs:
-        for mot in doc:
-            if DF_dico[mot] > 0:
-                IDF_dic[mot] = math.log(N / DF_dico[mot])
-
+    for mot in vocab:
+        if DF_dico[mot] > 0:
+            IDF_dic[mot] = math.log(N / DF_dico[mot])
+        else:
+            IDF_dic[mot] = 0.0
+    print("IDF finit")
     return IDF_dic
 
 def vectorize(docs: list, vocab):
-    TF_dico = TF(docs)
-    IDF_dico = IDF(docs, vocab)
-    TF_IDF_list: list = []
-    for idx, doc in enumerate(docs):
-        TF_doc = TF_dico[idx]
-        TF_IDF_doc = {}
-        for mot in doc:
-            TF_IDF_doc[mot] = TF_doc[mot] * IDF_dico[mot]
-        TF_IDF_list.append(TF_IDF_doc)
-    return TF_IDF_list
+    """
+       Transforme une liste de documents en représentation TF-IDF vectorisée.
+
+       Returns:
+           list of list of floats: Vecteurs TF-IDF complets pour chaque document.
+    """
+    print('vectorize commence')
+    TF_list = TF(docs)
+    IDF_dic = IDF(docs, vocab)
+
+    vecteurs = []
+    for idx, doc_tf in enumerate(TF_list):
+        vecteur = {}
+        for mot in doc_tf:
+            if mot in IDF_dic:
+                vecteur[mot] = doc_tf[mot] * IDF_dic[mot]
+        vecteurs.append(vecteur)  # <=== Ceci doit être dans la boucle
+
+    print("vectorize finit")
+    return vecteurs
+

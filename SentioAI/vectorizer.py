@@ -1,3 +1,5 @@
+import math
+
 def creer_vocab(docs):
     """
     Construit un vocabulaire unique à partir d'une liste de documents tokenisés.
@@ -16,7 +18,7 @@ def creer_vocab(docs):
             if j not in vocab_final:
                 vocab_final.append(j)
 
-    print(vocab_final)
+    return vocab_final
 
 def TF(docs):
 
@@ -51,6 +53,52 @@ def TF(docs):
 
         TF_list.append(TF)  # ajoute le dictionnaire TF de ce document à la liste
 
-    print(TF_list)
+    return TF_list
 
-#creer_vocab([["hello", "holaaaa"], ["hello", "heyy"]])
+def DF(docs, vocab):
+
+    """
+    Calcule TF.
+
+    Args:
+        docs (list of list of str): Corpus sous forme d'une liste de documents,
+                                    chaque document étant une liste de mots (tokens).
+
+    Returns:
+        Integer.
+        """
+    DF = {mot: 0 for mot in vocab}
+    for i in vocab:
+        for h in docs:
+            if i in h:
+                DF[i] += 1
+
+    return DF
+
+def IDF(docs, vocab):
+    DF_dico = DF(docs, vocab)
+    N = len(docs)
+    IDF_dic = {}
+    for  doc in docs:
+        for mot in doc:
+            IDF_dic[mot] = math.log(N / DF_dico[mot])
+    return IDF_dic
+
+def Tf_Idf(docs: list, vocab):
+    TF_dico = TF(docs)
+    IDF_dico = IDF(docs, vocab)
+    TF_IDF_list: list = []
+    for idx, doc in enumerate(docs):
+        TF_doc = TF_dico[idx]
+        TF_IDF_doc = {}
+        for mot in doc:
+            TF_IDF_doc[mot] = TF_doc[mot] * IDF_dico[mot]
+        TF_IDF_list.append(TF_IDF_doc)
+    return TF_IDF_list
+
+docs = [
+    ["le", "chat", "mange", "la", "souris", "souris"],
+    ["le", "chien", "aboie"],
+    ["la", "souris", "mange", "le", "fromage"]
+]
+print(Tf_Idf(docs))

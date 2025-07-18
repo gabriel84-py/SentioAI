@@ -1,4 +1,9 @@
+*.pkl
+*.joblib
 *.json
 *.csv
 __pycache__/
+*.pyc
+.DS_Store
+.env
 data/

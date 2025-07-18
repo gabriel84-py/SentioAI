@@ -1,7 +1,12 @@
 import joblib
 
-model = joblib.load("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/model_sentioAI.pkl")
-vectorizer = joblib.load("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/vectorizer_sentioAI.pkl")
+def load_remote_model(url):
+    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+        tmp_file.write(requests.get(url).content)
+        return joblib.load(tmp_file.name)
+
+model = load_remote_model("https://drive.google.com/file/d/10Yc4T0BtEUGRmPL9tvG_KDRg3ErQuAO2/view?usp=drive_link")
+vectorizer = load_remote_model("https://drive.google.com/file/d/1DBsgTHD6_aW4XChtuWsF0D8um6_EN29U/view?usp=drive_link")
 
 # Exemple
 nouvelle_phrase = input("Donne ta phrase : ")

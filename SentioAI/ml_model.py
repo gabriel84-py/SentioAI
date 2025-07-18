@@ -37,8 +37,8 @@ def reentrainer_modele():
     new_model.fit(X_vect, y)
 
     # Sauvegarder
-    joblib.dump(new_model, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/model_sentioAI.pkl")
-    joblib.dump(new_vectorizer, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/vectorizer_sentioAI.pkl")
+    joblib.dump(new_model, "/Volumes/T7 Shield/dev_projects/data/model_sentioAI.pkl")
+    joblib.dump(new_vectorizer, "/Volumes/T7 Shield/dev_projects/data/vectorizer_sentioAI.pkl")
 
     return new_model, new_vectorizer
 

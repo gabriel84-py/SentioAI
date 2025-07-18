@@ -23,6 +23,18 @@
                 👎 Negative
         {% endif %}
   </p>
+        <form method="POST">
+        <input type="hidden" name="texte_utilisateur" value="{{ texte }}">
+        <label>La prédiction est-elle correcte ?</label><br>
+        <input type="radio" name="correction" value="1" required> Oui
+        <input type="radio" name="correction" value="0" required> Non<br>
+        <label>Si non, indiquez le bon label :</label>
+        <select name="label_corrige">
+            <option value="1">👍 Positive</option>
+            <option value="0">👎 Negative</option>
+        </select><br>
+        <button type="submit" name="feedback" value="true">Envoyer la correction</button>
+    </form>
 {% endif %}
 
     </div>

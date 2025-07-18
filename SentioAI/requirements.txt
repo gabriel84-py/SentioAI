@@ -24,3 +24,7 @@ seaborn==0.13.2
 
 # Téléchargement de données (optionnel)
 requests==2.31.0
+
+
+--prefer-binary
+blis==0.7.9

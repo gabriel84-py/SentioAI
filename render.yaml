@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: sentioai
+    env: python
+    buildCommand: ./build.sh && pip install -r requirements.txt
+    startCommand: gunicorn SentioAI.app:app
+    plan: free

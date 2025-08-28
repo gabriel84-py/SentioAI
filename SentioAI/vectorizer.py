@@ -86,3 +86,5 @@ def vectorize(docs: list, vocab):
     print("vectorize finit")
     return vecteurs
 
+if __name__ == "__main__":
+    print(vectorize([["j'ai adoré !!"], ["c'etait trop nul"]], creer_vocab([["j'ai adoré !!"], ["c'etait trop nul"]])))

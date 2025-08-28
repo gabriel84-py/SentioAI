@@ -1,4 +1,6 @@
 import joblib
+import requests
+import tempfile
 
 def load_remote_model(url):
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -7,11 +9,11 @@ def load_remote_model(url):
 
 model = load_remote_model("https://drive.google.com/file/d/10Yc4T0BtEUGRmPL9tvG_KDRg3ErQuAO2/view?usp=drive_link")
 vectorizer = load_remote_model("https://drive.google.com/file/d/1DBsgTHD6_aW4XChtuWsF0D8um6_EN29U/view?usp=drive_link")
+print('loaded')
 
 # Exemple
 nouvelle_phrase = input("Donne ta phrase : ")
 
-# Prétraitement (le même que tu as appliqué à ton corpus)
 from SentioAI.preprocessing import preprocess
 
 tokens = preprocess(nouvelle_phrase)

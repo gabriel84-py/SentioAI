@@ -7,13 +7,13 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 
-def reentrainer_modele():
+def reentrainer_model():
     # Charger données originales
-    df_train = pd.read_csv("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/train.csv", keep_default_na=False)
+    df_train = pd.read_csv("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/data/train.csv", keep_default_na=False)
 
     # Charger corrections utilisateur
-    if os.path.exists('/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/correction.csv'):
-        df_corrections = pd.read_csv("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/data/correction.csv", names=["texte", "label"], keep_default_na=False)
+    if os.path.exists('/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/data/correction.csv'):
+        df_corrections = pd.read_csv("/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/data/correction.csv", names=["texte", "label"], keep_default_na=False)
         df_train = pd.concat([df_train, df_corrections], ignore_index=True)
 
     # Prétraitement + vectorisation
@@ -37,9 +37,9 @@ def reentrainer_modele():
     new_model.fit(X_vect, y)
 
     # Sauvegarder
-    joblib.dump(new_model, "/Volumes/T7 Shield/dev_projects/data/model_sentioAI.pkl")
-    joblib.dump(new_vectorizer, "/Volumes/T7 Shield/dev_projects/data/vectorizer_sentioAI.pkl")
+    joblib.dump(new_model, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/model_sentioAI.pkl")
+    joblib.dump(new_vectorizer, "/Users/gabrieljeanvermeille/PycharmProjects/SentioAI/SentioAI/vectorizer_sentioAI.pkl")
 
     return new_model, new_vectorizer
 
-reentrainer_modele()
+reentrainer_model()

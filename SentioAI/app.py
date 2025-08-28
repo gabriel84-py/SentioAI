@@ -19,15 +19,14 @@ def load_remote_model(url):
     
     return model
 
-# Utilise le lien direct Google Drive
-model_url = "https://drive.google.com/uc?export=download&id=10Yc4T0BtEUGRmPL9tvG_KDRg3ErQuAO2"
-model = load_remote_model(model_url)
-vectorizer = load_remote_model("https://drive.google.com/uc?export=download&id=1DBsgTHD6_aW4XChtuWsF0D8um6_EN29U")
+
+model = joblib.load("model_sentioAI.pkl")
+vectorizer = joblib.load("vectorizer_sentioAI.pkl")
 
 
 app = Flask(__name__)
 
-CORRECTION_FILE = "data/user_feedback.csv"
+CORRECTION_FILE = "data/correction.csv"
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -53,6 +52,7 @@ def index():
         print("Tokens :", tokens)
         vecteur = vectorizer.transform([Counter(tokens)])
         prediction = int(model.predict(vecteur)[0])
+        print(prediction)
 
     return render_template("index.html", prediction=prediction, texte=texte)
 

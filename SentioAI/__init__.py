@@ -1,7 +1,7 @@
 # sentioai/__init__.py
 
 __version__ = "0.1.0"
-
+from .preprocessing import preprocess
 # Importations internes
 from .data_loader import load_my_dataset, load_allocine_dataframe_from_csv
 #from .preprocessing import clean_text, preprocess_texts
